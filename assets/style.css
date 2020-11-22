@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Font";
+  src: url("./font-regular.otf");
+  font-weight: normal;
+  weight: 400;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font-family: "Font";
+  --primary: #4094f5;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --bg-color: #000000;
+}
+
+header {
+  padding: 2rem 15rem;
+  border-bottom: solid 1px #303030;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+::selection {
+  background: var(--primary);
+  opacity: 1;
+  color: var(--text-primary);
+  padding: 10px;
+}
+
+.container {
+  margin: 2rem 25rem;
+}
+
+main {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.item {
+  margin-bottom: 3rem;
+  display: block;
+  position: relative;
+}
+
+.log-date,
+.date {
+  font-size: 0.8rem;
+}
+
+.log-date {
+  margin-top: 0.5rem;
+  position: absolute;
+  left: -10rem;
+  opacity: 1;
+  width: 120px;
+  line-height: 1.45;
+  transition: opacity 0.3s ease;
+}
+
+.date {
+  margin-bottom: 0.5rem;
+  display: none;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 2rem;
+  }
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .date {
+    display: block;
+  }
+}
