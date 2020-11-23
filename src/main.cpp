@@ -13,23 +13,19 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    string desc;
-    
-    string contentToAdd = "<link rel='stylesheet' href='../assets/style.css' />";
-
+    string line, content;
     ofstream output;
     ifstream logStore;
 
     logStore.open("logs.csv");
     output.open("../site/content.html");
 
-    while (getline(logStore, desc))
+    while (getline(logStore, line))
     {
-        contentToAdd += parseCSV(desc);
+        content += parseCSV(line);
     }
 
-    cout << contentToAdd;
-    output << contentToAdd;
+    output << wrapData(content);
     return 0;
 }
 
