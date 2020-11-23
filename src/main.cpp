@@ -19,7 +19,11 @@ int main(int argc, char const *argv[])
                 return 0;
             }
 
-            add(argv[i+1]);
+            string title;
+            for(int j = i+1; j < argc ; j++)
+                title += argv[j];
+
+            add(title);
         }
 
         if(arg == "build"){
