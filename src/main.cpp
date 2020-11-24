@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
 
             string title;
             for(int j = i+1; j < argc ; j++)
-                title += argv[j];
+                title = title + " " + argv[j];
 
             add(title);
         }
