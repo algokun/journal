@@ -15,7 +15,7 @@ void add(string title)
 {
     string desc;
     ofstream logStore;
-    logStore.open("logs.csv", ios_base::app); // to open file in append mode
+    logStore.open("../site-data/logs.csv", ios_base::app); // to open file in append mode
 
     cout << "Enter description (markdown links and images allowed): \n";
     getline(cin, desc);

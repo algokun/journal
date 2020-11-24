@@ -7,7 +7,7 @@ string parseMarkdown(string line);
 
 string wrapData(string content)
 {
-    string start = "<html lang='en'><head><meta charset='UTF-8' /><meta name='viewport' content='width=device-width, initial-scale=1.0' /><title>Journal</title><link rel='stylesheet' href='../assets/style.css' /></head><body><header>Journal shows recent updates</header><div class='container'><main><div class='log-list'>";
+    string start = "<html lang='en'><head><meta charset='UTF-8' /><meta name='viewport' content='width=device-width, initial-scale=1.0' /><title>Journal</title><link rel='stylesheet' href='../site-data/style.css' /></head><body><header>Journal shows recent updates</header><div class='container'><main><div class='log-list'>";
     string end = "</div></main></div></body></html>";
     return start + content + end;
 }
@@ -33,7 +33,7 @@ void build()
     ofstream output;
     ifstream logStore;
 
-    logStore.open("logs.csv");
+    logStore.open("../site-data/logs.csv");
     output.open("../site/journal.html");
 
     while (getline(logStore, line))
