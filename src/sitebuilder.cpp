@@ -65,10 +65,10 @@ string parseMarkdown(string line) {
     string link = "",alias = "";
     int start = i;
 
-    while(line[++i] != ']') link += line[i]; // storing link
+    while(line[++i] != ']') alias += line[i]; // storing link
     i+=2;
     
-    while(line[i] != ')') alias += line[i++]; // storing alias
+    while(line[i] != ')') link += line[i++]; // storing alias
 
     string text = isImg ? line.substr(0, start-1) : line.substr(0, start);
     string html = isImg ? "<img src = '" + link + "' alt = '" + alias + "'/>" : "<a href = '" + link + "'>" + alias + "</a>";
